@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cargo Parcel Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 25px;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h2 {
+      color: #003366;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 15px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #003366;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0055aa;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>  <div class="container">
+    <h2>Cargo Parcel Portal</h2>
+    <p>System status: <strong style="color:red;">DOWN</strong></p>
+    <p>Please enter the phone number used during booking</p><input type="tel" id="phone" placeholder="Enter booking phone number" />
+<button onclick="checkNumber()">Continue</button>
+
+<div class="error" id="errorMsg">❌ No parcel placed with this number</div>
+
+  </div>  <script>
+    function checkNumber() {
+      const phone = document.getElementById('phone').value.trim();
+      const correctNumber = '0758459230';
+
+      if (phone === correctNumber) {
+        window.location.href = 'parcel-details.html';
+      } else {
+        document.getElementById('errorMsg').style.display = 'block';
+      }
+    }
+  </script></body>
+</html>
